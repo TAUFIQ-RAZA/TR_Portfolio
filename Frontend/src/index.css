@@ -1,0 +1,26 @@
+@import "tailwindcss";
+@keyframes menuOpen {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes menuClose {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.95);
+  }
+}
+
+.animate-menu-open {
+  animation: menuOpen 0.25s ease-out forwards;
+}
