@@ -7,9 +7,9 @@ const router = express.Router();
 router.post("/register", register);
 router.post("/login", login);
 
-// Example protected route
+// Test protected route
 router.get("/profile", protect, (req, res) => {
-  res.json({ message: "Profile accessed" });
+  res.json({ message: "Profile accessed", userId: req.user });
 });
 
 module.exports = router;

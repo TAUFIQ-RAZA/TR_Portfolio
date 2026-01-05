@@ -1,5 +1,6 @@
 import React from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
+import ProtectedRoute from "./routes/ProtectedRoute";
 
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -19,8 +20,7 @@ function App() {
   const location = useLocation();
 
   const hideLayout =
-    location.pathname === "/login" ||
-    location.pathname === "/register";
+    location.pathname === "/login" || location.pathname === "/register";
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -28,32 +28,20 @@ function App() {
 
       <main className="grow">
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/skills" element={<Skills />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/experience" element={<Experience />} />
-
-          <Route
-            path="/contact"
-            element={
-              <PrivateRoute>
-                <Contact />
-              </PrivateRoute>
-            }
-          />
-
-          <Route
-            path="/resume"
-            element={
-              <PrivateRoute>
-                <Resume />
-              </PrivateRoute>
-            }
-          />
-
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+
+          {/* Protected Portfolio */}
+          <Route element={<ProtectedRoute />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/skills" element={<Skills />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/experience" element={<Experience />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/resume" element={<Resume />} />
+          </Route>
+
         </Routes>
       </main>
 

@@ -1,4 +1,4 @@
-const API_URL = "https://tr-portfolio-backend.onrender.com";
+const API_URL = "https://tr-portfolio-backend.onrender.com/api/auth";
 
 export const registerUser = async (userData) => {
   const response = await fetch(`${API_URL}/register`, {
@@ -23,3 +23,5 @@ export const loginUser = async (userData) => {
 
   return response.json();
 };
+
+
