@@ -39,43 +39,59 @@ function Login() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-300">
       <form
         onSubmit={handleSubmit}
-        className="bg-white p-6 rounded-lg shadow-md w-80"
+        className="bg-white p-8 rounded-2xl shadow-xl w-96 border border-gray-100"
       >
-        <h2 className="text-2xl font-bold mb-4 text-center">Login</h2>
+        <h2 className="text-3xl font-bold mb-6 text-center text-gray-800">
+          Welcome Back
+        </h2>
 
-        {error && <p className="text-red-500 text-sm mb-2">{error}</p>}
+        {error && (
+          <p className="text-red-600 text-sm mb-4 text-center bg-red-50 py-2 rounded">
+            {error}
+          </p>
+        )}
 
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          className="w-full mb-3 p-2 border rounded"
-          value={formData.email}
-          onChange={handleChange}
-          required
-        />
+        <div className="mb-4">
+          <input
+            type="email"
+            name="email"
+            placeholder="Enter your email"
+            className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-black/60 transition"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+        </div>
 
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          className="w-full mb-4 p-2 border rounded"
-          value={formData.password}
-          onChange={handleChange}
-          required
-        />
+        <div className="mb-5">
+          <input
+            type="password"
+            name="password"
+            placeholder="Enter your password"
+            className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-black/60 transition"
+            value={formData.password}
+            onChange={handleChange}
+            required
+          />
+        </div>
 
-        <button className="w-full bg-black text-white py-2 rounded mb-3">
+        <button
+          className="w-full bg-black text-white py-3 rounded-lg font-semibold 
+                     hover:bg-gray-800 transition duration-200 shadow-md"
+        >
           Login
         </button>
 
         {/* Register Navigation */}
-        <p className="text-sm text-center">
+        <p className="text-sm text-center mt-5 text-gray-600">
           Don’t have an account?{" "}
-          <Link to="/register" className="text-blue-600 font-semibold">
+          <Link
+            to="/register"
+            className="text-black font-semibold hover:underline"
+          >
             Register
           </Link>
         </p>

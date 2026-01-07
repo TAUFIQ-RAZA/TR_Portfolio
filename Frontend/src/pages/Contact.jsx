@@ -61,39 +61,45 @@ function Contact() {
   return (
     <section
       id="contact"
-      className="w-full min-h-screen bg-white dark:bg-gray-900 px-6 py-20"
+      className="w-full min-h-screen 
+                 bg-gradient-to-br from-white to-gray-100 
+                 dark:from-gray-900 dark:to-gray-800 
+                 px-6 py-20"
     >
       <div className="max-w-5xl mx-auto">
 
         {/* Heading */}
-        <div className="text-center mb-14">
-          <h2 className="text-4xl font-bold text-gray-900 dark:text-white">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white">
             Contact Me
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 mt-3">
+          <p className="text-gray-600 dark:text-gray-400 mt-4 text-lg">
             Feel free to reach out for collaboration or opportunities
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-14">
 
           {/* Contact Info */}
-          <div className="space-y-6">
-            <div className="flex items-center gap-4">
+          <div className="space-y-8">
+            <div className="flex items-center gap-4 p-4 rounded-xl 
+                            bg-white dark:bg-gray-800 shadow-md">
               <Mail className="text-blue-600" />
               <p className="text-gray-700 dark:text-gray-300">
                 taufiq.dev2025@gmail.com
               </p>
             </div>
 
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4 p-4 rounded-xl 
+                            bg-white dark:bg-gray-800 shadow-md">
               <Phone className="text-blue-600" />
               <p className="text-gray-700 dark:text-gray-300">
                 +91 76763 56614
               </p>
             </div>
 
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4 p-4 rounded-xl 
+                            bg-white dark:bg-gray-800 shadow-md">
               <MapPin className="text-blue-600" />
               <p className="text-gray-700 dark:text-gray-300">
                 Karnataka, India
@@ -104,7 +110,8 @@ function Contact() {
           {/* Contact Form */}
           <form
             onSubmit={handleSubmit}
-            className="bg-gray-50 dark:bg-gray-800 p-8 rounded-2xl shadow-lg space-y-6"
+            className="bg-white dark:bg-gray-800 
+                       p-9 rounded-3xl shadow-xl space-y-6"
           >
             <input
               type="text"
@@ -113,7 +120,12 @@ function Contact() {
               value={form.name}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white outline-none focus:ring-2 focus:ring-blue-600"
+              className="w-full px-4 py-3 rounded-lg border 
+                         border-gray-300 dark:border-gray-700 
+                         bg-gray-50 dark:bg-gray-900 
+                         text-gray-900 dark:text-white 
+                         outline-none focus:ring-2 focus:ring-blue-600 
+                         transition"
             />
 
             <input
@@ -123,7 +135,12 @@ function Contact() {
               value={form.contact}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white outline-none focus:ring-2 focus:ring-blue-600"
+              className="w-full px-4 py-3 rounded-lg border 
+                         border-gray-300 dark:border-gray-700 
+                         bg-gray-50 dark:bg-gray-900 
+                         text-gray-900 dark:text-white 
+                         outline-none focus:ring-2 focus:ring-blue-600 
+                         transition"
             />
 
             <input
@@ -133,7 +150,12 @@ function Contact() {
               value={form.subject}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white outline-none focus:ring-2 focus:ring-blue-600"
+              className="w-full px-4 py-3 rounded-lg border 
+                         border-gray-300 dark:border-gray-700 
+                         bg-gray-50 dark:bg-gray-900 
+                         text-gray-900 dark:text-white 
+                         outline-none focus:ring-2 focus:ring-blue-600 
+                         transition"
             />
 
             <textarea
@@ -143,18 +165,26 @@ function Contact() {
               value={form.message}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white outline-none focus:ring-2 focus:ring-blue-600"
+              className="w-full px-4 py-3 rounded-lg border 
+                         border-gray-300 dark:border-gray-700 
+                         bg-gray-50 dark:bg-gray-900 
+                         text-gray-900 dark:text-white 
+                         outline-none focus:ring-2 focus:ring-blue-600 
+                         transition resize-none"
             ></textarea>
 
             <button
               type="submit"
-              className="w-full bg-blue-600 hover:bg-blue-700 transition text-white py-3 rounded-lg font-medium"
+              className="w-full bg-blue-600 hover:bg-blue-700 
+                         transition-all duration-200 
+                         text-white py-3 rounded-lg font-semibold 
+                         shadow-md hover:shadow-lg active:scale-95"
             >
               🚀 Send Message
             </button>
 
             {status && (
-              <p className="text-center text-sm text-gray-700 dark:text-gray-300">
+              <p className="text-center text-sm font-medium text-gray-700 dark:text-gray-300">
                 {status}
               </p>
             )}

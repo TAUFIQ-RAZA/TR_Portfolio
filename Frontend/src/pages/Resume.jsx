@@ -6,8 +6,9 @@ function Resume() {
       <div className="max-w-6xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
 
         {/* Header */}
-        <div className="flex justify-between items-center px-6 py-4 border-b">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-0 justify-between items-center px-6 py-4 border-b">
           <h2 className="text-xl font-semibold">My Resume</h2>
+
           <a
             href="/resume.pdf"
             download
@@ -17,12 +18,35 @@ function Resume() {
           </a>
         </div>
 
-        {/* Iframe */}
-        <iframe
-          src="/resume.pdf"
-          title="Resume"
-          className="w-full h-[85vh]"
-        />
+        {/* Resume Viewer */}
+        <div className="w-full">
+
+          {/* Desktop / Tablet View */}
+          <iframe
+            src="/resume.pdf"
+            title="Resume Desktop"
+            className="
+              hidden sm:block
+              w-full
+              h-[80vh] md:h-[85vh]
+              border-0
+            "
+          />
+
+          {/* Mobile View */}
+          <iframe
+            src="/resume.pdf#view=FitH"
+            title="Resume Mobile"
+            className="
+              block sm:hidden
+              w-full
+              h-[100vh]
+              border-0
+            "
+          />
+
+        </div>
+
       </div>
     </section>
   );
