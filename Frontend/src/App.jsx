@@ -19,33 +19,35 @@ import PrivateRoute from "./components/PrivateRoute";
 function App() {
   const location = useLocation();
 
-  const hideLayout =
+  const isAuthPage =
     location.pathname === "/login" || location.pathname === "/register";
 
   return (
-    <div className="min-h-screen flex flex-col">
-      {!hideLayout && <Header />}
+    <div className="min-h-screen flex flex-col bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-300">
+      {!isAuthPage && <Header />}
 
       <main className="grow">
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-
-          {/* Protected Portfolio */}
-          <Route element={<ProtectedRoute />}>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/skills" element={<Skills />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/experience" element={<Experience />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/resume" element={<Resume />} />
-          </Route>
-
+          <Route
+            path="/"
+            element={
+              <div className="scroll-smooth">
+                <section id="home"><Home /></section>
+                <section id="about"><About /></section>
+                <section id="skills"><Skills /></section>
+                <section id="projects"><Projects /></section>
+                <section id="experience"><Experience /></section>
+                <section id="contact"><Contact /></section>
+              </div>
+            }
+          />
+          <Route path="/resume" element={<Resume />} />
         </Routes>
       </main>
 
-      {!hideLayout && <Footer />}
+      {!isAuthPage && <Footer />}
     </div>
   );
 }

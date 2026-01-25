@@ -1,120 +1,143 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Briefcase, GraduationCap, Calendar, MapPin } from "lucide-react";
+
+const experienceData = [
+  {
+    type: "work",
+    title: "Full Stack Developer",
+    company: "P Tap Technology",
+    period: "Oct 2024 – Present",
+    location: "Remote/India",
+    description: [
+      "Built scalable MERN stack applications with React and Node.js.",
+      "Developed RESTful APIs and managed MongoDB databases.",
+      "Implemented AI-powered features for automation and insights.",
+      "Worked in Agile teams with code reviews and deployments.",
+    ],
+    icon: <Briefcase className="text-blue-600" />,
+    color: "blue"
+  }
+];
+
+const educationData = [
+  {
+    type: "education",
+    title: "Bachelor of Engineering",
+    company: "Agdi College",
+    period: "2020 – 2024",
+    location: "Karnataka, India",
+    description: [
+      "Information Science Engineering",
+      "Graduated with honors",
+      "Focus on software engineering and data structures",
+    ],
+    stats: "CGPA: 8.0 / 10",
+    icon: <GraduationCap className="text-indigo-600" />,
+    color: "indigo"
+  }
+];
 
 function Experience() {
   return (
-    <section
-      id="experience"
-      className="w-full min-h-screen 
-                 bg-gradient-to-br from-white to-gray-100 
-                 dark:from-gray-900 dark:to-gray-800 
-                 px-6 py-20"
-    >
+    <section id="experience" className="w-full py-24 bg-white dark:bg-slate-900 transition-colors duration-300 px-6">
       <div className="max-w-6xl mx-auto">
-
         {/* Heading */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-18"
+          transition={{ duration: 0.8 }}
+          className="text-center mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white">
-            Experience & Education
+          <div className="inline-block px-4 py-1.5 mb-4 text-xs font-bold tracking-widest text-blue-600 uppercase bg-blue-100 dark:bg-blue-900/30 dark:text-blue-400 rounded-full">
+            Journey
+          </div>
+          <h2 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white">
+            Experience & <span className="text-blue-600">Education.</span>
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 mt-4 text-lg">
-            Professional experience and academic qualification
-          </p>
         </motion.div>
 
-        {/* Two Column Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-14">
-
-          {/* EXPERIENCE CARD */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="relative bg-white dark:bg-gray-800 
-                       rounded-3xl shadow-xl p-9 
-                       border border-gray-100 dark:border-gray-700
-                       hover:shadow-2xl transition"
-          >
-            {/* Badge */}
-            <span className="absolute -top-4 left-6 bg-blue-600 text-white 
-                             text-sm font-semibold px-4 py-1 rounded-full shadow">
-              Work
-            </span>
-
-            <h3 className="text-2xl font-bold text-blue-600 mb-5">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          {/* Experience Column */}
+          <div className="space-y-8">
+            <h3 className="text-2xl font-black text-slate-900 dark:text-white flex items-center gap-3 mb-10">
+              <span className="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-lg text-blue-600"><Briefcase size={24} /></span>
               Work Experience
             </h3>
+            {experienceData.map((item, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                className="relative pl-8 border-l-2 border-slate-100 dark:border-slate-800"
+              >
+                <div className="absolute top-0 -left-[9px] w-4 h-4 rounded-full bg-blue-600 border-4 border-white dark:border-slate-900 shadow-sm"></div>
+                <div className="bg-slate-50 dark:bg-slate-800/40 p-8 rounded-3xl border border-slate-100 dark:border-slate-800 hover:border-blue-500/30 transition-all group">
+                  <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
+                    <h4 className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-blue-600 transition-colors">{item.title}</h4>
+                    <span className="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-bold rounded-full">{item.period}</span>
+                  </div>
+                  <div className="flex items-center gap-4 text-sm font-bold text-slate-500 dark:text-slate-400 mb-6 uppercase tracking-wider">
+                    <span className="flex items-center gap-1"><MapPin size={14} /> {item.location}</span>
+                    <span className="h-1 w-1 bg-slate-300 dark:bg-slate-700 rounded-full"></span>
+                    <span>{item.company}</span>
+                  </div>
+                  <ul className="space-y-3">
+                    {item.description.map((desc, i) => (
+                      <li key={i} className="flex items-start gap-3 text-slate-600 dark:text-slate-400 text-[15px] leading-relaxed">
+                        <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-blue-600 shrink-0"></span>
+                        {desc}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </motion.div>
+            ))}
+          </div>
 
-            <h4 className="text-xl font-semibold text-gray-900 dark:text-white">
-              Full Stack Developer
-            </h4>
-            <p className="text-gray-600 dark:text-gray-400 mb-5">
-              P Tap Technology · Oct 2024 – Present
-            </p>
-
-            <ul className="space-y-3 text-gray-700 dark:text-gray-300 list-disc list-inside leading-relaxed">
-              <li>
-                Built scalable MERN stack applications with React and Node.js.
-              </li>
-              <li>
-                Developed RESTful APIs and managed MongoDB databases.
-              </li>
-              <li>
-                Implemented AI-powered features for automation and insights.
-              </li>
-              <li>
-                Worked in Agile teams with code reviews and deployments.
-              </li>
-            </ul>
-          </motion.div>
-
-          {/* EDUCATION CARD */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="relative bg-white dark:bg-gray-800 
-                       rounded-3xl shadow-xl p-9 
-                       border border-gray-100 dark:border-gray-700
-                       hover:shadow-2xl transition"
-          >
-            {/* Badge */}
-            <span className="absolute -top-4 left-6 bg-green-600 text-white 
-                             text-sm font-semibold px-4 py-1 rounded-full shadow">
-              Education
-            </span>
-
-            <h3 className="text-2xl font-bold text-blue-600 mb-5">
+          {/* Education Column */}
+          <div className="space-y-8">
+            <h3 className="text-2xl font-black text-slate-900 dark:text-white flex items-center gap-3 mb-10">
+              <span className="p-2 bg-indigo-100 dark:bg-indigo-900/30 rounded-lg text-indigo-600"><GraduationCap size={24} /></span>
               Education
             </h3>
-
-            <h4 className="text-xl font-semibold text-gray-900 dark:text-white">
-              Bachelor of Engineering
-            </h4>
-            <p className="text-gray-600 dark:text-gray-400">
-              Information Science Engineering
-            </p>
-
-            <p className="mt-4 text-gray-700 dark:text-gray-300">
-              Agdi College, Karnataka
-            </p>
-
-            <p className="mt-2 text-gray-700 dark:text-gray-300">
-              Graduated: 2024
-            </p>
-
-            <p className="mt-5 text-gray-900 dark:text-white font-semibold text-lg">
-              CGPA: 8.0 / 10
-            </p>
-          </motion.div>
-
+            {educationData.map((item, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                className="relative pl-8 border-l-2 border-slate-100 dark:border-slate-800"
+              >
+                <div className="absolute top-0 -left-[9px] w-4 h-4 rounded-full bg-indigo-600 border-4 border-white dark:border-slate-900 shadow-sm"></div>
+                <div className="bg-slate-50 dark:bg-slate-800/40 p-8 rounded-3xl border border-slate-100 dark:border-slate-800 hover:border-indigo-500/30 transition-all group">
+                  <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
+                    <h4 className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-indigo-600 transition-colors">{item.title}</h4>
+                    <span className="px-3 py-1 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 text-xs font-bold rounded-full">{item.period}</span>
+                  </div>
+                  <div className="flex items-center gap-4 text-sm font-bold text-slate-500 dark:text-slate-400 mb-6 uppercase tracking-wider">
+                    <span className="flex items-center gap-1"><MapPin size={14} /> {item.location}</span>
+                    <span className="h-1 w-1 bg-slate-300 dark:bg-slate-700 rounded-full"></span>
+                    <span>{item.company}</span>
+                  </div>
+                  <ul className="space-y-3 mb-6">
+                    {item.description.map((desc, i) => (
+                      <li key={i} className="flex items-start gap-3 text-slate-600 dark:text-slate-400 text-[15px] leading-relaxed">
+                        <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-indigo-600 shrink-0"></span>
+                        {desc}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="inline-block p-4 bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800">
+                    <div className="text-xs font-black uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-1">Score</div>
+                    <div className="text-lg font-black text-indigo-600">{item.stats}</div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
-
       </div>
     </section>
   );
