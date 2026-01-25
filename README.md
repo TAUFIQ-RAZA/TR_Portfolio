@@ -17,17 +17,6 @@ A professional, high-performance single-page personal portfolio website. Built w
 |:--:|
 | *Modern Desktop Hero Section (Dark Mode)* |
 
-### 🛠️ More Snapshots
-
-````carousel
-![About Section](https://raw.githubusercontent.com/TAUFIQ-RAZA/TR_Portfolio/main/screenshots/about.png)
-<!-- slide -->
-![Skills Section](https://raw.githubusercontent.com/TAUFIQ-RAZA/TR_Portfolio/main/screenshots/skills.png)
-<!-- slide -->
-![Contact Section](https://raw.githubusercontent.com/TAUFIQ-RAZA/TR_Portfolio/main/screenshots/contact.png)
-<!-- slide -->
-![Resume Section](https://raw.githubusercontent.com/TAUFIQ-RAZA/TR_Portfolio/main/screenshots/resume.png)
-````
 
 ## 🔗 Live Deployment
 
