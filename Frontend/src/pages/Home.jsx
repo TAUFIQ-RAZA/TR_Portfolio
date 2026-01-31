@@ -34,11 +34,34 @@ function Home() {
               Transforming Ideas into <span className="text-blue-600">Digital Reality.</span>
             </h1>
 
-            <p className="mt-6 text-base md:text-lg text-slate-500 dark:text-slate-400 max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium">
-              Hi, I’m <span className="font-bold text-slate-900 dark:text-white">Taufiq Raza</span>,
-              a Full-Stack Developer bridging the gap between design and functionality
-              with the modern MERN stack.
-            </p>
+            {/* Role Pills */}
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 mt-6">
+              {[
+                "MERN Stack Developer",
+                "Frontend Engineer",
+                "Computer Science Engineer",
+                "Deep Learning Expert",
+                "AI Enthusiast"
+              ].map((role, i) => (
+                <motion.span
+                  key={i}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.4, delay: i * 0.1 }}
+                  whileHover={{ scale: 1.05 }}
+                  className="px-4 py-2 text-xs font-bold tracking-wide
+                             text-blue-600 dark:text-blue-400
+                             bg-blue-50/50 dark:bg-blue-900/20
+                             border border-blue-200 dark:border-blue-500/20
+                             rounded-full backdrop-blur-md
+                             shadow-sm hover:shadow-blue-500/10
+                             hover:bg-blue-100 dark:hover:bg-blue-900/40
+                             transition-all duration-300 cursor-default"
+                >
+                  {role}
+                </motion.span>
+              ))}
+            </div>
 
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 mt-10">
               <button
@@ -111,4 +134,3 @@ function Home() {
 }
 
 export default Home;
-
