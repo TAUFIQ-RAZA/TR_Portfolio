@@ -28,7 +28,7 @@ function App() {
       <ScrollToTop />
       {!isAuthPage && <Header />}
 
-      <main className="grow">
+      <main className="grow pt-[60px]">
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />

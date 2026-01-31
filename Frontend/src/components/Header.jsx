@@ -51,7 +51,7 @@ function Header() {
   return (
     <>
       {/* ================= NAVBAR ================= */}
-      <nav className="bg-white/90 dark:bg-slate-900/90 backdrop-blur-lg shadow-sm sticky top-0 z-50 transition-colors duration-300 border-b border-slate-200/50 dark:border-slate-700/30">
+      <nav className="bg-white/90 dark:bg-slate-900/90 backdrop-blur-lg shadow-sm fixed top-0 left-0 right-0 z-50 transition-colors duration-300 border-b border-slate-200/50 dark:border-slate-700/30">
         <div className="container-custom py-2 flex items-center justify-between">
           {/* LOGO */}
           <div className="flex items-center gap-2">
