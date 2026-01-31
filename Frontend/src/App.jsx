@@ -15,6 +15,7 @@ import Register from "./pages/Register";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import PrivateRoute from "./components/PrivateRoute";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   const location = useLocation();
@@ -24,6 +25,7 @@ function App() {
 
   return (
     <div className="min-h-screen flex flex-col bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-300">
+      <ScrollToTop />
       {!isAuthPage && <Header />}
 
       <main className="grow">

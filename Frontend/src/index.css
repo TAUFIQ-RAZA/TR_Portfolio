@@ -2,18 +2,49 @@
 
 @variant dark (&:where(.dark, .dark *));
 
+:root {
+  --font-size-base: clamp(0.9375rem, 0.9rem + 0.2vw, 1rem);
+  /* 15px to 16px */
+  --font-size-h1: clamp(2rem, 1.5rem + 3vw, 3.5rem);
+  --font-size-h2: clamp(1.625rem, 1.4rem + 1.5vw, 2.5rem);
+  --font-size-h3: clamp(1.25rem, 1.2rem + 0.5vw, 1.5rem);
+  --card-shadow: 0 4px 20px -10px rgba(2, 6, 23, 0.08);
+  --card-shadow-hover: 0 12px 30px -15px rgba(2, 6, 23, 0.15);
+  --section-spacing: clamp(4rem, 3rem + 5vw, 6rem);
+  /* Reduced from fixed 6rem */
+}
+
 html {
   scroll-behavior: smooth;
+  font-size: 16px;
+  /* Keep base 16px but use rem/clamp for scaling */
 }
 
 body {
   font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: var(--font-size-base);
   @apply bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-300 antialiased;
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: var(--font-size-h3);
+  line-height: 1.3;
 }
 
 /* Custom scrollbar for a premium look */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
+  /* Slightly thinner */
 }
 
 ::-webkit-scrollbar-track {
@@ -21,5 +52,24 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-slate-300 dark:bg-slate-700 rounded-full hover:bg-blue-500 transition-colors;
+  @apply bg-slate-200 dark:bg-slate-800 rounded-full hover:bg-blue-500 transition-colors;
+}
+
+.card-premium {
+  @apply bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-2xl transition-all duration-300;
+  box-shadow: var(--card-shadow);
+}
+
+.card-premium:hover {
+  box-shadow: var(--card-shadow-hover);
+  @apply border-blue-500/10 -translate-y-1;
+}
+
+.container-custom {
+  @apply max-w-[1150px] mx-auto px-4 md:px-6;
+}
+
+.section-spacing {
+  padding-top: var(--section-spacing);
+  padding-bottom: var(--section-spacing);
 }
