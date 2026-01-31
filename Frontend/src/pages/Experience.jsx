@@ -57,7 +57,7 @@ function Experience() {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 w-full max-w-full">
           {/* Experience Column */}
           <div className="space-y-6">
             <h3 className="text-lg font-black text-slate-900 dark:text-white flex items-center gap-2.5 mb-8">

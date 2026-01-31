@@ -81,7 +81,7 @@ function Contact() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start w-full max-w-full">
           {/* Info Side */}
           <div className="lg:col-span-5 space-y-8">
             <div className="space-y-4">

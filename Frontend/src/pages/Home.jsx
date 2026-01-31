@@ -15,7 +15,7 @@ function Home() {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center overflow-hidden bg-slate-50 dark:bg-slate-950 transition-colors duration-300">
+    <section id="home" className="min-h-screen flex items-center overflow-hidden bg-slate-50 dark:bg-slate-950 transition-colors duration-300 w-full max-w-full">
       <div className="container-custom py-16 md:py-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-10 lg:gap-14">
 
@@ -110,7 +110,7 @@ function Home() {
             transition={{ duration: 0.8 }}
             className="order-1 lg:order-2 flex justify-center lg:justify-end"
           >
-            <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-[360px] md:h-[360px]">
+            <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-[360px] md:h-[360px] overflow-hidden">
               {/* Background Decorations */}
               <div className="absolute -top-4 -right-4 w-28 h-28 bg-blue-400/10 rounded-full blur-2xl animate-pulse"></div>
               <div className="absolute -bottom-4 -left-4 w-28 h-28 bg-indigo-400/10 rounded-full blur-2xl animate-pulse delay-700"></div>

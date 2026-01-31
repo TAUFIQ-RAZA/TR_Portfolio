@@ -14,16 +14,24 @@
   /* Reduced from fixed 6rem */
 }
 
+* {
+  box-sizing: border-box;
+}
+
 html {
   scroll-behavior: smooth;
   font-size: 16px;
   /* Keep base 16px but use rem/clamp for scaling */
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body {
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: var(--font-size-base);
   line-height: 1.7;
+  max-width: 100%;
+  overflow-x: hidden;
   @apply bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-300 antialiased;
 }
 
@@ -74,7 +82,8 @@ h3 {
 }
 
 .container-custom {
-  @apply max-w-[1150px] mx-auto px-4 md:px-6;
+  @apply max-w-[1150px] w-full mx-auto px-4 md:px-6;
+  box-sizing: border-box;
 }
 
 .section-spacing {

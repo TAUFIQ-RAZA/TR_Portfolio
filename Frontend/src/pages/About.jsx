@@ -39,7 +39,7 @@ function About() {
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
-            className="lg:col-span-5 relative group max-w-[300px] md:max-w-[350px] lg:max-w-none mx-auto w-full"
+            className="lg:col-span-5 relative group max-w-[300px] md:max-w-[350px] lg:max-w-none mx-auto w-full px-6 md:px-8"
           >
             <div className="absolute -inset-3 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-[2rem] blur opacity-10 group-hover:opacity-20 transition duration-1000"></div>
             <div className="relative bg-white dark:bg-slate-800 p-2.5 rounded-[2rem] shadow-xl overflow-hidden transition-colors border border-slate-50 dark:border-slate-800">
@@ -51,7 +51,7 @@ function About() {
             </div>
 
             {/* Float Badge */}
-            <div className="absolute -bottom-4 -right-4 md:-right-6 bg-blue-600 text-white p-4 md:p-5 rounded-2xl shadow-xl border-2 border-white dark:border-slate-900">
+            <div className="absolute -bottom-4 right-2 md:right-0 bg-blue-600 text-white p-4 md:p-5 rounded-2xl shadow-xl border-2 border-white dark:border-slate-900">
               <div className="text-2xl md:text-3xl font-black">2+</div>
               <div className="text-[8px] md:text-[9px] font-bold uppercase tracking-widest opacity-80">Years Exp</div>
             </div>

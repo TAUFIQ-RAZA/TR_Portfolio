@@ -143,7 +143,7 @@ function Header() {
           />
           <div
             className="
-              fixed top-4 right-4 w-[280px] max-h-[85vh] z-50
+              fixed top-4 right-4 w-[280px] max-w-[calc(100vw-2rem)] max-h-[85vh] z-50
               p-5 pt-12
               bg-white/95 dark:bg-slate-900/95
               backdrop-blur-lg
